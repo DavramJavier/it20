@@ -45,6 +45,12 @@ public class StackCalculator extends JFrame implements ActionListener {
             buttonPanel.add(button);
         }
 
+        // Add button for zero separately to maintain layout order
+        JButton zeroButton = new JButton("0");
+        zeroButton.setFont(new Font("Arial", Font.BOLD, 16));
+        zeroButton.addActionListener(this);
+        buttonPanel.add(zeroButton);
+
         
     }
 }
