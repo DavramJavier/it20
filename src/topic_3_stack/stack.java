@@ -29,5 +29,8 @@ public class stack {
         return (top == maxSize - 1);
     }
     
+    public int size() {
+        return top + 1;
+    }
     
 }
