@@ -77,6 +77,27 @@ public class Linkedlist {
         // If the node to move was not found
         if (movingNode == null) return;
 
-       
+        // Remove the node from its current position
+        if (movingPrev != null) {
+            movingPrev.next = movingNode.next;
+        } else {
+            head = movingNode.next; // Moving the head
+        }
+
+        // Insert the node at the new position
+        current = head;
+        prev = null;
+        for (int i = 0; current != null && i < newIndex; i++) {
+            prev = current;
+            current = current.next;
+        }
+
+        if (prev != null) {
+            movingNode.next = current;
+            prev.next = movingNode;
+        } else {
+            movingNode.next = head;
+            head = movingNode;
+        }
     }
 }
