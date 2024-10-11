@@ -57,6 +57,108 @@ public class StackCalculator extends JFrame implements ActionListener {
         JButton multiplyButton = new JButton("*");
         JButton divideButton = new JButton("/");
 
-        
+        JButton[] opButtons = {addButton, subtractButton, multiplyButton, divideButton};
+        for (JButton button : opButtons) {
+            button.setFont(new Font("Arial", Font.BOLD, 16));
+            button.addActionListener(this);
+            buttonPanel.add(button);
+        }
+
+        add(buttonPanel, BorderLayout.CENTER);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+
+        if ("0123456789".contains(command)) {
+            int number = Integer.parseInt(command);
+            stack.push(number);
+            displayStack();
+        } else {
+            switch (command) {
+                case "+":
+                    add();
+                    break;
+                case "-":
+                    subtract();
+                    break;
+                case "*":
+                    multiply();
+                    break;
+                case "/":
+                    divide();
+                    break;
+            }
+        }
+    }
+
+    private void add() {
+        if (stack.size() < 2) {
+            display.append("Need at least two numbers to add.\n");
+            return;
+        }
+        int b = stack.pop();
+        int a = stack.pop();
+        int result = a + b;
+        stack.push(result);
+        display.append("Performed addition: " + a + " + " + b + " = " + result + "\n");
+        displayStack();
+    }
+
+    private void subtract() {
+        if (stack.size() < 2) {
+            display.append("Need at least two numbers to subtract.\n");
+            return;
+        }
+        int b = stack.pop();
+        int a = stack.pop();
+        int result = a - b;
+        stack.push(result);
+        display.append("Performed subtraction: " + a + " - " + b + " = " + result + "\n");
+        displayStack();
+    }
+
+    private void multiply() {
+        if (stack.size() < 2) {
+            display.append("Need at least two numbers to multiply.\n");
+            return;
+        }
+        int b = stack.pop();
+        int a = stack.pop();
+        int result = a * b;
+        stack.push(result);
+        display.append("Performed multiplication: " + a + " * " + b + " = " + result + "\n");
+        displayStack();
+    }
+
+    private void divide() {
+        if (stack.size() < 2) {
+            display.append("Need at least two numbers to divide.\n");
+            return;
+        }
+        int b = stack.pop();
+        int a = stack.pop();
+        if (b == 0) {
+            display.append("Cannot divide by zero.\n");
+            stack.push(a); // Push back the numbers if division is not possible
+            stack.push(b);
+            return;
+        }
+        int result = a / b;
+        stack.push(result);
+        display.append("Performed division: " + a + " / " + b + " = " + result + "\n");
+        displayStack();
+    }
+
+    private void displayStack() {
+        display.setText("Current Stack: " + stack + "\n");
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            StackCalculator calculator = new StackCalculator();
+            calculator.setVisible(true);
+        });
     }
 }
