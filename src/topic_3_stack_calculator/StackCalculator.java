@@ -32,6 +32,11 @@ public class StackCalculator extends JFrame implements ActionListener {
         JScrollPane scrollPane = new JScrollPane(display);
         add(scrollPane, BorderLayout.NORTH);
 
+        // Panel for buttons with spacing
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(4, 3, 10, 10)); // 10px horizontal and vertical gap
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Margin around the button panel
+
         
     }
 }
