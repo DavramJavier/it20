@@ -37,6 +37,14 @@ public class StackCalculator extends JFrame implements ActionListener {
         buttonPanel.setLayout(new GridLayout(4, 3, 10, 10)); // 10px horizontal and vertical gap
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Margin around the button panel
 
+        // Number buttons (0-9)
+        for (int i = 1; i <= 9; i++) {
+            JButton button = new JButton(String.valueOf(i));
+            button.setFont(new Font("Arial", Font.BOLD, 16));
+            button.addActionListener(this);
+            buttonPanel.add(button);
+        }
+
         
     }
 }
