@@ -51,6 +51,12 @@ public class StackCalculator extends JFrame implements ActionListener {
         zeroButton.addActionListener(this);
         buttonPanel.add(zeroButton);
 
+        // Operation buttons
+        JButton addButton = new JButton("+");
+        JButton subtractButton = new JButton("-");
+        JButton multiplyButton = new JButton("*");
+        JButton divideButton = new JButton("/");
+
         
     }
 }
