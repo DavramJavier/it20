@@ -19,4 +19,14 @@ public class main {
              Scanner sc = new Scanner(System.in);
              Queue customerQueue = new Queue();
 
-        
+             System.out.println("Hello there user!");
+             
+             while(true) {
+                               
+                 System.out.println("What do you want:"
+                         + " 1. Display Queue."
+                         + " 2. Add Customer. "
+                         + " 3. Serve Customer."
+                         + " 4. Leave");
+                 int choices = sc.nextInt();
+               
