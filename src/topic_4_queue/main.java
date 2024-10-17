@@ -29,4 +29,34 @@ public class main {
                          + " 3. Serve Customer."
                          + " 4. Leave");
                  int choices = sc.nextInt();
-               
+                 switch(choices) {
+                     case 1:
+                           System.out.println();
+                           customerQueue.displayQueue();
+                           break;
+                     case 2:
+                           //To accepts another string input
+                           sc.nextLine();
+                           System.out.println("Enter new customer: ");
+                           String name = sc.nextLine();
+                           System.out.println();
+                           customerQueue.enqueue(new Customer(name));
+                           break;
+                     case 3:
+                           System.out.println();
+                           customerQueue.dequeue();
+                           break;
+                    case 4:
+                           //Exit the program
+                           System.out.println();
+                           System.out.println("Thank you for using my system! Comeback and run it again.");
+                           System.exit(0);
+                           break;   
+                    default:
+                           System.out.println();
+                           System.out.println("Invalid choice. Please select a valid option.");       
+                 }
+             }
+	}
+
+}
