@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package arraylist;
+package Arraylist;
 
 import java.util.Scanner;
 
