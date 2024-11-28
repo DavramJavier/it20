@@ -13,4 +13,12 @@ public class InsertionSort {  // Main class InsertionSort
             int key = arr.get(i);  // Stores the current element (key) to be inserted
             int j = i - 1;  // The index of the element just before the key
 
-         
+            // Move elements of arr[0..i-1] that are greater than key one position ahead
+            // to make space for the key
+            while (j >= 0 && arr.get(j) > key) {
+                arr.set(j + 1, arr.get(j));  // Shift the larger element to the right
+                j = j - 1;  // Move to the next element
+            }
+            arr.set(j + 1, key);  // Place the key in the correct position
+        }
+    }
