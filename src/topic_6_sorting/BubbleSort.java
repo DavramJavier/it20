@@ -50,4 +50,8 @@ public class BubbleSort {  // Main class BubbleSort
 
                 bubbleSort(NumsToSort);  // Calls the bubbleSort method to sort the ArrayList
 
-              
+                System.out.println("Sorted ArrayList:");  // Prints the list after sorting
+                System.out.println(NumsToSort);  // Prints the sorted ArrayList
+
+                break;  // Exits the loop after sorting and displaying the result
+            }
