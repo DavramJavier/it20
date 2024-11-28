@@ -45,4 +45,9 @@ public class BubbleSort {  // Main class BubbleSort
             // This block executes after the last number is entered
             if (nums == i) {
 
+                System.out.println("Original ArrayList:");  // Prints the original list before sorting
+                System.out.println(NumsToSort);  // Prints the current state of the ArrayList
+
+                bubbleSort(NumsToSort);  // Calls the bubbleSort method to sort the ArrayList
+
               
