@@ -34,3 +34,8 @@ public class BubbleSort {  // Main class BubbleSort
         System.out.println("How many numbers you want to sort?");  // Asks the user for the number of elements
         int nums = scan.nextInt();  // Takes the input number from the user
         scan.nextLine();  // Clears the buffer
+
+        // Loop to take user input for each number to be sorted
+        for (int i = 1; i <= nums; i++) {
+
+            
