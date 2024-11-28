@@ -38,4 +38,11 @@ public class BubbleSort {  // Main class BubbleSort
         // Loop to take user input for each number to be sorted
         for (int i = 1; i <= nums; i++) {
 
-            
+            System.out.println("Enter the number you want to sort");  // Asks the user to enter a number
+            int num = scan.nextInt();  // Takes an integer input from the user
+            NumsToSort.add(num);  // Adds the input number to the ArrayList
+
+            // This block executes after the last number is entered
+            if (nums == i) {
+
+              
