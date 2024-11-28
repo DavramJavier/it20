@@ -35,28 +35,4 @@ public class BubbleSort {  // Main class BubbleSort
         int nums = scan.nextInt();  // Takes the input number from the user
         scan.nextLine();  // Clears the buffer
 
-        // Loop to take user input for each number to be sorted
-        for (int i = 1; i <= nums; i++) {
-
-            System.out.println("Enter the number you want to sort");  // Asks the user to enter a number
-            int num = scan.nextInt();  // Takes an integer input from the user
-            NumsToSort.add(num);  // Adds the input number to the ArrayList
-
-            // This block executes after the last number is entered
-            if (nums == i) {
-
-                System.out.println("Original ArrayList:");  // Prints the original list before sorting
-                System.out.println(NumsToSort);  // Prints the current state of the ArrayList
-
-                bubbleSort(NumsToSort);  // Calls the bubbleSort method to sort the ArrayList
-
-                System.out.println("Sorted ArrayList:");  // Prints the list after sorting
-                System.out.println(NumsToSort);  // Prints the sorted ArrayList
-
-                break;  // Exits the loop after sorting and displaying the result
-            }
-
-        }
-
-    }
-}
+       
